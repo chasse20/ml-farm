@@ -6,13 +6,12 @@ The larger system treated a group of high-core-count machines as a shared ML pro
 
 This repository contains the worker/training side of that system. It is intentionally not the complete platform.
 
-- distributed job coordination through tuned PostgreSQL
-- transactional job claiming with `FOR UPDATE ... SKIP LOCKED`
+- distributed job coordination through tuned PostgreSQL with transactional job claiming
 - worker registration and targeted or unassigned job routing
 - multiprocessing with explicit CPU affinity
 - per-process BLAS/OpenMP thread budgets to prevent oversubscription
 - asynchronous orchestration around CPU-bound worker processes
-- model training across several algorithm families
+- model training across several algorithm families, easily scalable
 - ONNX conversion, graph normalization, validation, and inference smoke testing
 - retry-aware artifact publishing
 - also a special endpoint specifically to aid in Bayesian Process sweeping using per-tree random-forest statistics
@@ -65,7 +64,7 @@ After training, models are converted to ONNX in `FTP/Service.py`. The exported g
 
 ## Sweeper
 
-The farm also supported a separate sweeper branch that I use in practice for a custom Bayesian process. I chose a Random Forest algorith and evaluated candidate feature vectors across individual trees. This can easily be expanded to support regular Gaussian Processes.
+The ML Farm/FarmPy also supported a separate sweeper branch that I use in practice for a custom Bayesian process. I chose a Random Forest algorith and evaluated candidate feature vectors across individual trees. This can easily be expanded to support regular Gaussian Processes.
 
 ## ONNX Artifacts
 
@@ -91,6 +90,6 @@ See `.env.example` for the main deployment settings.
 
 ## What is not included
 
-This was a component of a considerably larger personal project. The public sample intentionally excludes the master/control-plane services, database creation and migration history, datasets, produced models, application-specific feature generation, broader homelab orchestration, infrastructure configuration, and private deployment details. You'll have to setup your own SQL database!
+This was a component of a considerably larger personal project. The public sample intentionally excludes database creation and migration history, datasets, produced models, application-specific feature generation, broader homelab orchestration, infrastructure configuration, and private deployment details. Good luck! You'll have to setup your own SQL database!
 
 The repository is therefore intended as an architecture and implementation sample rather than a turnkey ML platform.
