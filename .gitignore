@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+*.user
+.DS_Store
+Thumbs.db
+
+# Local configuration
+.env
+.env.*
+!.env.example
+appsettings.Development.json
+appsettings.Local.json
+
+# Models / generated data
+*.onnx
+*.pkl
+*.joblib
+*.bin
+*.npy
+*.npz
+models/
+data/
+output/
+
+# Logs / temporary files
+*.log
+*.tmp
+*.temp
+
+# Packaging
+build/
+dist/
+*.egg-info/

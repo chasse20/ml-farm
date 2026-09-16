@@ -1,0 +1,12 @@
+aioftp
+asyncpg
+numpy
+psutil
+scikit-learn
+lightgbm
+catboost
+xgboost
+onnx
+onnxruntime
+skl2onnx
+onnxmltools==1.16.0
