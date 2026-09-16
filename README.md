@@ -1,6 +1,6 @@
 # Python ML Farm
 
-This is a code sample from a larger personal machine-learning platform I developed 2023-2026 for my custom-built homelab as a hobby.
+This is a code sample from a larger personal machine-learning platform I developed 2023-2026 for my homelab as a hobby.
 
 The larger system treated a group of high-core-count machines as a shared ML processing farm. PostgreSQL acted as the coordination and state backend, workers dynamically claimed training jobs, models were converted to ONNX, validated locally, and published to a lightweight internal artifact store.
 
