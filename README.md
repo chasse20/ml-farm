@@ -32,7 +32,7 @@ CPU-heavy training happens outside the asyncio event loop. Work is sent to isola
                          |
              +-----------+-----------+
              |                       |
-        FarmPy node A              FarmPy node B
+        Node A                     Node B
         async controller           async controller
              |                       |
        +-----+-----+           +-----+-----+
